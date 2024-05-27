@@ -1,6 +1,7 @@
 // src/components/FlightCard.js
 import React from 'react';
 import { Box, Badge, Image, Text } from '@chakra-ui/react';
+import { Button, ButtonGroup } from '@chakra-ui/react'
 
 const FlightCard = ({ flight }) => {
   return (
@@ -48,6 +49,7 @@ const FlightCard = ({ flight }) => {
           </Text>
         </Box>
       </Box>
+      <Box display="flex" justifyContent="center"><Button colorScheme='teal'   size='md' mb={5}>Book Now</Button></Box>
     </Box>
   );
 };
