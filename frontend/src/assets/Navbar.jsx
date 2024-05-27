@@ -16,7 +16,7 @@ export default function Navbar(props) {
           <a className="nav-link active" aria-current="page" href="/Homepage">Home</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/">Login</a>
+          <a className="nav-link" href="/">Logout</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
