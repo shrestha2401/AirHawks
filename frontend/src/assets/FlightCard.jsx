@@ -1,55 +1,63 @@
-// src/components/FlightCard.js
+// src/assets/FlightCard.js
 import React from 'react';
-import { Box, Badge, Image, Text } from '@chakra-ui/react';
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Box, Badge, Image, Text, Button, Flex, Divider } from '@chakra-ui/react';
+import placeholderImage from './placeholder.jpg';
 
 const FlightCard = ({ flight }) => {
   return (
     <Box borderWidth="1px" borderRadius="lg" overflow="hidden" mb={5}>
-      <Image src={flight.image} alt={`${flight.airline} plane`} width="100%" height="200px" objectFit="cover" />
+      <Image src={flight.image || placeholderImage} alt={`${flight.airline} plane`} width="100%" height="200px" objectFit="cover" />
 
       <Box p="6">
-        <Box display="flex" alignItems="baseline">
+        <Flex alignItems="center" mb={2}>
           <Badge borderRadius="full" px="2" colorScheme="teal">
             {flight.airline}
           </Badge>
-          <Box
-            color="gray.500"
-            fontWeight="semibold"
-            letterSpacing="wide"
-            fontSize="xs"
-            textTransform="uppercase"
-            ml="2"
-          >
-            {flight.origin} &bull; {flight.destination}
+        </Flex>
+
+        <Flex alignItems="center" justifyContent="space-between">
+          <Box fontWeight="bold" as="h4" lineHeight="tight" isTruncated>
+            {flight.location.code}
           </Box>
-        </Box>
-
-        <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight" isTruncated>
-          {flight.flightNumber}
-        </Box>
-
-        <Box>
-          Departure: {flight.departureTime}
-          <Box as="span" color="gray.600" fontSize="sm">
-            / {flight.departureDate}
-          </Box>
-        </Box>
-
-        <Box>
-          Arrival: {flight.arrivalTime}
-          <Box as="span" color="gray.600" fontSize="sm">
-            / {flight.arrivalDate}
-          </Box>
-        </Box>
-
-        <Box display="flex" mt="2" alignItems="center">
-          <Text as="span" color="gray.600" fontSize="sm">
-            Duration: {flight.duration}
+          <Divider orientation="vertical" borderColor="gray.500" height="20px" />
+          <Text fontWeight="semibold" as="span">
+            {new Date(flight.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
           </Text>
+          <Divider orientation="vertical" borderColor="gray.500" height="20px" />
+          <Box fontWeight="bold" as="h4" lineHeight="tight" isTruncated>
+            {flight.destination.code}
+          </Box>
+        </Flex>
+
+        <Box mt="2">
+          <Text fontWeight="semibold">Flight Number:</Text>
+          {flight.flightNumber || 'Not specified'}
+        </Box>
+
+        <Box mt="2">
+          <Text fontWeight="semibold">Departure:</Text>
+          {new Date(flight.date).toDateString()}
+        </Box>
+
+        <Box mt="2">
+          <Text fontWeight="semibold">Duration:</Text>
+          {flight.duration || 'Not specified'}
+        </Box>
+
+        <Box mt="2">
+          <Text fontWeight="semibold">Price:</Text>
+          ₹{flight.price_in_inr}
+        </Box>
+
+        <Box mt="2">
+          <Text fontWeight="semibold">Non-stop:</Text>
+          {flight.non_stop ? 'Yes' : 'No'}
         </Box>
       </Box>
-      <Box display="flex" justifyContent="center"><Button colorScheme='teal'   size='md' mb={5}>Book Now</Button></Box>
+      
+      <Flex justify="center">
+        <Button colorScheme='teal' size='md' mb={5}>Book Now</Button>
+      </Flex>
     </Box>
   );
 };

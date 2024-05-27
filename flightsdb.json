@@ -1,0 +1,318 @@
+
+[   {
+    "airline": "Indigo",
+    "flightNumber": "6E-123",
+    "location": {
+      "code": "TIR",
+      "name": "Tirupati Airport, Tirupati"
+    },
+    "destination": {
+      "code": "HYD",
+      "name": "Rajiv Gandhi International Airport, Hyderabad"
+    },
+    "date": "2024-06-23T10:00:00.000Z",
+    "price_in_inr": 12773,
+    "non_stop": true
+  },
+  {
+    "airline": "Air India",
+    "flightNumber": "AI-202",
+    "location": {
+      "code": "BLR",
+      "name": "Kempegowda International Airport, Bangalore"
+    },
+    "destination": {
+      "code": "DEL",
+      "name": "Indira Gandhi International Airport, New Delhi"
+    },
+    "date": "2024-07-15T15:00:00.000Z",
+    "price_in_inr": 14500,
+    "non_stop": false
+  },
+  {
+    "airline": "SpiceJet",
+    "flightNumber": "SG-456",
+    "location": {
+      "code": "DEL",
+      "name": "Indira Gandhi International Airport, New Delhi"
+    },
+    "destination": {
+      "code": "BOM",
+      "name": "Chhatrapati Shivaji Maharaj International Airport, Mumbai"
+    },
+    "date": "2024-06-01T08:30:00.000Z",
+    "price_in_inr": 11500,
+    "non_stop": true
+  },
+  {
+    "airline": "Vistara",
+    "flightNumber": "UK-789",
+    "location": {
+      "code": "CCU",
+      "name": "Netaji Subhas Chandra Bose International Airport, Kolkata"
+    },
+    "destination": {
+      "code": "MAA",
+      "name": "Chennai International Airport, Chennai"
+    },
+    "date": "2024-06-02T11:45:00.000Z",
+    "price_in_inr": 13500,
+    "non_stop": true
+  },
+  {
+    "airline": "GoAir",
+    "flightNumber": "G8-321",
+    "location": {
+      "code": "PNQ",
+      "name": "Pune Airport, Pune"
+    },
+    "destination": {
+      "code": "GOI",
+      "name": "Goa International Airport, Goa"
+    },
+    "date": "2024-06-03T13:20:00.000Z",
+    "price_in_inr": 9500,
+    "non_stop": true
+  },
+  {
+    "airline": "AirAsia",
+    "flightNumber": "AK-555",
+    "location": {
+      "code": "COK",
+      "name": "Cochin International Airport, Kochi"
+    },
+    "destination": {
+      "code": "BLR",
+      "name": "Kempegowda International Airport, Bangalore"
+    },
+    "date": "2024-06-04T14:15:00.000Z",
+    "price_in_inr": 12000,
+    "non_stop": false
+  },
+  {
+    "airline": "GoAir",
+    "flightNumber": "G8-234",
+    "location": {
+      "code": "GOI",
+      "name": "Goa International Airport, Goa"
+    },
+    "destination": {
+      "code": "BOM",
+      "name": "Chhatrapati Shivaji Maharaj International Airport, Mumbai"
+    },
+    "date": "2024-06-05T09:10:00.000Z",
+    "price_in_inr": 10500,
+    "non_stop": true
+  },
+  {
+  "airline": "Vistara",
+  "flightNumber": "UK-123",
+  "location": {
+    "code": "MAA",
+    "name": "Chennai International Airport, Chennai"
+  },
+  "destination": {
+    "code": "BOM",
+    "name": "Chhatrapati Shivaji Maharaj International Airport, Mumbai"
+  },
+  "date": "2024-06-06T14:45:00.000Z",
+  "price_in_inr": 14500,
+  "non_stop": true
+  },
+  {
+    "airline": "Air India",
+    "flightNumber": "AI-678",
+    "location": {
+      "code": "MAA",
+      "name": "Chennai International Airport, Chennai"
+    },
+    "destination": {
+      "code": "DEL",
+      "name": "Indira Gandhi International Airport, New Delhi"
+    },
+    "date": "2024-06-06T12:30:00.000Z",
+    "price_in_inr": 14000,
+    "non_stop": true
+  },
+  {
+    "airline": "IndiGo",
+    "flightNumber": "6E-456",
+    "location": {
+      "code": "BOM",
+      "name": "Chhatrapati Shivaji Maharaj International Airport, Mumbai"
+    },
+    "destination": {
+      "code": "HYD",
+      "name": "Rajiv Gandhi International Airport, Hyderabad"
+    },
+    "date": "2024-06-07T16:45:00.000Z",
+    "price_in_inr": 12500,
+    "non_stop": false
+  },
+  {
+    "airline": "SpiceJet",
+    "flightNumber": "SG-789",
+    "location": {
+      "code": "BLR",
+      "name": "Kempegowda International Airport, Bangalore"
+    },
+    "destination": {
+      "code": "DEL",
+      "name": "Indira Gandhi International Airport, New Delhi"
+    },
+    "date": "2024-06-08T19:00:00.000Z",
+    "price_in_inr": 13000,
+    "non_stop": true
+  },
+  {
+    "airline": "Emirates",
+    "flightNumber": "EK-501",
+    "location": {
+      "code": "DXB",
+      "name": "Dubai International Airport, Dubai"
+    },
+    "destination": {
+      "code": "LHR",
+      "name": "Heathrow Airport, London"
+    },
+    "date": "2024-06-01T08:00:00.000Z",
+    "price_in_inr": 30000,
+    "non_stop": true
+  },
+  {
+    "airline": "Qatar Airways",
+    "flightNumber": "QR-202",
+    "location": {
+      "code": "DOH",
+      "name": "Hamad International Airport, Doha"
+    },
+    "destination": {
+      "code": "JFK",
+      "name": "John F. Kennedy International Airport, New York"
+    },
+    "date": "2024-06-02T09:30:00.000Z",
+    "price_in_inr": 45000,
+    "non_stop": false
+  },
+  {
+    "airline": "Singapore Airlines",
+    "flightNumber": "SQ-305",
+    "location": {
+      "code": "SIN",
+      "name": "Changi Airport, Singapore"
+    },
+    "destination": {
+      "code": "HND",
+      "name": "Haneda Airport, Tokyo"
+    },
+    "date": "2024-06-03T10:45:00.000Z",
+    "price_in_inr": 38000,
+    "non_stop": true
+  },
+  {
+    "airline": "Lufthansa",
+    "flightNumber": "LH-456",
+    "location": {
+      "code": "FRA",
+      "name": "Frankfurt Airport, Frankfurt"
+    },
+    "destination": {
+      "code": "JFK",
+      "name": "John F. Kennedy International Airport, New York"
+    },
+    "date": "2024-06-04T11:20:00.000Z",
+    "price_in_inr": 42000,
+    "non_stop": true
+  },
+  {
+    "airline": "British Airways",
+    "flightNumber": "BA-789",
+    "location": {
+      "code": "LHR",
+      "name": "Heathrow Airport, London"
+    },
+    "destination": {
+      "code": "CDG",
+      "name": "Charles de Gaulle Airport, Paris"
+    },
+    "date": "2024-06-05T12:10:00.000Z",
+    "price_in_inr": 25000,
+    "non_stop": true
+  },
+  {
+    "airline": "Cathay Pacific",
+    "flightNumber": "CX-321",
+    "location": {
+      "code": "HKG",
+      "name": "Hong Kong International Airport, Hong Kong"
+    },
+    "destination": {
+      "code": "SFO",
+      "name": "San Francisco International Airport, San Francisco"
+    },
+    "date": "2024-06-06T13:45:00.000Z",
+    "price_in_inr": 52000,
+    "non_stop": true
+  },
+  {
+    "airline": "Air India",
+    "flightNumber": "AI-101",
+    "location": {
+      "code": "BOM",
+      "name": "Chhatrapati Shivaji Maharaj International Airport, Mumbai"
+    },
+    "destination": {
+      "code": "JFK",
+      "name": "John F. Kennedy International Airport, New York"
+    },
+    "date": "2024-06-07T14:30:00.000Z",
+    "price_in_inr": 47000,
+    "non_stop": false
+  },
+  {
+    "airline": "Etihad Airways",
+    "flightNumber": "EY-456",
+    "location": {
+      "code": "AUH",
+      "name": "Abu Dhabi International Airport, Abu Dhabi"
+    },
+    "destination": {
+      "code": "LAX",
+      "name": "Los Angeles International Airport, Los Angeles"
+    },
+    "date": "2024-06-08T15:15:00.000Z",
+    "price_in_inr": 55000,
+    "non_stop": true
+  },
+  {
+    "airline": "Air France",
+    "flightNumber": "AF-789",
+    "location": {
+      "code": "CDG",
+      "name": "Charles de Gaulle Airport, Paris"
+    },
+    "destination": {
+      "code": "SIN",
+      "name": "Changi Airport, Singapore"
+    },
+    "date": "2024-06-09T16:00:00.000Z",
+    "price_in_inr": 40000,
+    "non_stop": true
+  },
+  {
+    "airline": "KLM Royal Dutch Airlines",
+    "flightNumber": "KL-321",
+    "location": {
+      "code": "AMS",
+      "name": "Amsterdam Airport Schiphol, Amsterdam"
+    },
+    "destination": {
+      "code": "DEL",
+      "name": "Indira Gandhi International Airport, New Delhi"
+    },
+    "date": "2024-06-10T17:30:00.000Z",
+    "price_in_inr": 28000,
+    "non_stop": false
+  }
+]
+

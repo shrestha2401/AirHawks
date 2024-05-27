@@ -1,5 +1,5 @@
 // src/pages/FlightSearch.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Button, FormControl, FormLabel, Select, Stack } from '@chakra-ui/react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -9,26 +9,37 @@ const FlightSearch = () => {
   const [boardingCity, setBoardingCity] = useState('');
   const [destinationCity, setDestinationCity] = useState('');
   const [selectedDate, setSelectedDate] = useState(null);
+  const [boardingCities, setBoardingCities] = useState([]);
+  const [destinationCities, setDestinationCities] = useState([]);
   const [flights, setFlights] = useState([]);
+  const [allFlights, setAllFlights] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/flights')
+      .then(response => response.json())
+      .then(data => {
+        setAllFlights(data);
+        const uniqueBoardingCities = Array.from(new Set(data.map(flight => flight.location.name)));
+        setBoardingCities(uniqueBoardingCities);
+        const uniqueDestinationCities = Array.from(new Set(data.map(flight => flight.destination.name)));
+        setDestinationCities(uniqueDestinationCities);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
   const handleSearch = () => {
-    // Mock data, replace this with actual API call
-    const mockFlights = [
-      {
-        airline: 'Indigo',
-        flightNumber: '6E-123',
-        origin: boardingCity,
-        destination: destinationCity,
-        departureTime: '10:00 AM',
-        departureDate: selectedDate.toDateString(),
-        arrivalTime: '1:00 PM',
-        arrivalDate: selectedDate.toDateString(),
-        duration: '3h',
-        image: 'https://via.placeholder.com/400'
-      },
-      // Add more mock flights as needed
-    ];
-    setFlights(mockFlights);
+    if (boardingCity && destinationCity && selectedDate) {
+      const filteredFlights = allFlights.filter(flight =>
+        flight.location.name === boardingCity &&
+        flight.destination.name === destinationCity &&
+        new Date(flight.date).toDateString() === selectedDate.toDateString()
+      );
+      setFlights(filteredFlights);
+    } else {
+      alert('Please fill in all fields.');
+    }
   };
 
   return (
@@ -36,18 +47,18 @@ const FlightSearch = () => {
       <FormControl mb={4}>
         <FormLabel>Boarding City</FormLabel>
         <Select value={boardingCity} onChange={(e) => setBoardingCity(e.target.value)} placeholder="Select Boarding City">
-          <option value="NY">New York</option>
-          <option value="LA">Los Angeles</option>
-          <option value="CHI">Chicago</option>
+          {boardingCities.map((city, index) => (
+            <option key={index} value={city}>{city}</option>
+          ))}
         </Select>
       </FormControl>
 
       <FormControl mb={4}>
         <FormLabel>Destination City</FormLabel>
         <Select value={destinationCity} onChange={(e) => setDestinationCity(e.target.value)} placeholder="Select Destination City">
-          <option value="LDN">London</option>
-          <option value="PRS">Paris</option>
-          <option value="TKY">Tokyo</option>
+          {destinationCities.map((city, index) => (
+            <option key={index} value={city}>{city}</option>
+          ))}
         </Select>
       </FormControl>
 
