@@ -1,4 +1,3 @@
-// src/pages/FlightSearch.js
 import React, { useState, useEffect } from 'react';
 import { Box, Button, FormControl, FormLabel, Select, Stack } from '@chakra-ui/react';
 import DatePicker from 'react-datepicker';
@@ -29,14 +28,36 @@ const FlightSearch = () => {
       });
   }, []);
 
+  const formatDateToLocalString = (date) => {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
   const handleSearch = () => {
     if (boardingCity && destinationCity && selectedDate) {
-      const filteredFlights = allFlights.filter(flight =>
-        flight.location.name === boardingCity &&
-        flight.destination.name === destinationCity &&
-        new Date(flight.date).toDateString() === selectedDate.toDateString()
-      );
-      setFlights(filteredFlights);
+      // Format selectedDate to a local date string (yyyy-mm-dd)
+      const selectedDateString = formatDateToLocalString(selectedDate);
+      console.log('Selected Date:', selectedDateString);
+
+      const filteredFlights = allFlights.filter(flight => {
+        // Format flight date to a local date string (yyyy-mm-dd)
+        const flightDate = formatDateToLocalString(new Date(flight.date));
+        console.log('Flight Date:', flightDate);
+
+        return flight.location.name === boardingCity &&
+               flight.destination.name === destinationCity &&
+               flightDate === selectedDateString;
+      });
+
+      console.log('Filtered Flights:', filteredFlights);
+
+      if (filteredFlights.length > 0) {
+        setFlights(filteredFlights);
+      } else {
+        alert('No Flights available');
+      }
     } else {
       alert('Please fill in all fields.');
     }

@@ -1,9 +1,12 @@
-// src/assets/FlightCard.js
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Badge, Image, Text, Button, Flex, Divider } from '@chakra-ui/react';
 import placeholderImage from './placeholder.jpg';
+import Popup from "./Popup.jsx";
 
 const FlightCard = ({ flight }) => {
+  const [showPopup, setShowPopup] = useState(false);
+  const baseFare = flight.price_in_inr;
+
   return (
     <Box borderWidth="1px" borderRadius="lg" overflow="hidden" mb={5}>
       <Image src={flight.image || placeholderImage} alt={`${flight.airline} plane`} width="100%" height="200px" objectFit="cover" />
@@ -56,7 +59,13 @@ const FlightCard = ({ flight }) => {
       </Box>
       
       <Flex justify="center">
-        <Button colorScheme='teal' size='md' mb={5}>Book Now</Button>
+        <Button colorScheme='teal' size='md' mb={5} onClick={() => setShowPopup(true)} >Book Now</Button>
+        {showPopup && 
+          <Popup 
+            baseFare={baseFare} 
+            onClose={() => setShowPopup(false)} 
+          />
+        }
       </Flex>
     </Box>
   );
