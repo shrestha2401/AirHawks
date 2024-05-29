@@ -64,6 +64,7 @@ function Popup({ baseFare, onClose }) {
                     </Button>
                 </Flex>
                 <Box mb={4}>
+                    <Text>Passenger Name - {"NA"}</Text>
                     <Text>Base Fare: INR- {baseFare.toFixed(2)}</Text>
                     <Text>Tax Rate:  {taxRate * 100}%</Text>
                     <Text>Final Price: INR- {finalPrice.toFixed(2)}</Text>

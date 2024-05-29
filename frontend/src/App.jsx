@@ -3,17 +3,25 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import LoginSignup from './assets/LoginSignup';
 import Dashboard from './assets/dashboard';
 import './App.css';
+const ProtectedRoute = ({ element: Component, ...rest }) => {
+  const token = localStorage.getItem('token');
+  return token ? <Component {...rest} /> : <Navigate to="/" />;
+};
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<LoginSignup />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+          path="/dashboard"
+          element={<ProtectedRoute element={Dashboard} />}
+        />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );
 };
+
 
 export default App;

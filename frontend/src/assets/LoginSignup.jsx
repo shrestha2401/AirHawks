@@ -6,8 +6,6 @@ import email_icon from './email.png';
 import password_icon from './password.png';
 import { useNavigate } from 'react-router-dom';
 
-
-
 const LoginSignup = () => {
   const navigate = useNavigate();
   const [action, setAction] = useState("Sign-Up");
@@ -30,8 +28,9 @@ const LoginSignup = () => {
           password: password
         });
       }
-      alert(response.data.message); 
+      alert(response.data.message);
       if (response.data.message === "Success" || response.data.message === "Login successful") {
+        localStorage.setItem('token', response.data.token); // Save token to localStorage
         navigate('/dashboard');
       }
     } catch (error) {
