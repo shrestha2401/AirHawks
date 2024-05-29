@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, Badge, Image, Text, Button, Flex, Divider } from '@chakra-ui/react';
 import placeholderImage from './placeholder.jpg';
 import Popup from "./Popup.jsx";
+import Comments from './comments.jsx';
 
 const FlightCard = ({ flight }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -67,7 +68,8 @@ const FlightCard = ({ flight }) => {
           />
         }
       </Flex>
-    </Box>
+      <Comments/>
+      </Box>  
   );
 };
 

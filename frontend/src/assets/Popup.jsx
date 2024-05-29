@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, Text, Button, Flex } from "@chakra-ui/react";
 // import PayNow from "./Payment-Gtw/PayNow";
-require('dotenv').config();
+// require('dotenv').config();
 
 function Popup({ baseFare, onClose }) {
     const [passengerCount, setPassengerCount] = useState(1);
