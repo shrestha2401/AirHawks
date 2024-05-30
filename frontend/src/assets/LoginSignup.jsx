@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+// src/LoginSignup.jsx
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import './LoginSignup.css'; 
 import user_icon from './person.png';
 import email_icon from './email.png';
 import password_icon from './password.png';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from './Usercontext.jsx';
 
 const LoginSignup = () => {
   const navigate = useNavigate();
+  const { username, setUsername, email, setEmail, password, setPassword } = useContext(UserContext);
   const [action, setAction] = useState("Sign-Up");
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   const handleAction = async (actionType) => {
     try {

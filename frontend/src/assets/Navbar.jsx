@@ -24,7 +24,7 @@ export default function Navbar(props) {
           {/* <Text mr={4}>Hi, {username}</Text> */}
           {/* <Link href="/Homepage" mr={4}>Home</Link> */}
           <Menu>
-          <MenuButton as={Button} mr = {4}>Home</MenuButton>
+          <Button as={Button} mr = {4}>Home</Button>
             <MenuButton as={Button}>Info</MenuButton>
             <MenuList>
               <MenuItem href="#">Manage Your Flight</MenuItem>
