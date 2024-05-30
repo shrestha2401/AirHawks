@@ -1,3 +1,4 @@
+
 import React, { useContext, useState } from 'react';
 import { Box, Text, Button, Flex } from "@chakra-ui/react";
 import { UserContext } from './Usercontext.jsx';
@@ -37,7 +38,7 @@ const Popup = ({ baseFare, onClose }) => {
             console.log(order);
 
             const options = {
-                key: "rzp_test_DOcyDBGTYpuOvq", // Enter the Key ID generated from the Dashboard
+                key: import.meta.env.RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
                 amount: order.amount, // Amount is in currency subunits. Default currency is INR.
                 currency: order.currency,
                 name: "AirHawks", // your business name

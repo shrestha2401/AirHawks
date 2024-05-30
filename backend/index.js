@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require('cors');
@@ -6,13 +7,8 @@ const signupRoutes = require("./authentication/Signup.js");
 const flightRouter = require('./api/flight.js');
 const paymentRoutes = require('./api/payment.js');
 
-mongoose.connect(
-  "mongodb+srv://admin:Airhawks123@airhawks-database.q7484wt.mongodb.net/user_info"
-);
-
-const flightDBConnection = mongoose.createConnection(
-  "mongodb+srv://admin:Airhawks123@airhawks-database.q7484wt.mongodb.net/flights_db"
-);
+mongoose.connect(process.env.MONGODB_URI);
+const flightDBConnection = mongoose.createConnection(process.env.MONGODB_URI_ANOTHER);
 
 const app = express();
 app.use(express.json());
