@@ -10,7 +10,7 @@ import { UserContext } from './Usercontext.jsx';
 
 const LoginSignup = () => {
   const navigate = useNavigate();
-  const { username, setUsername, email, setEmail, password, setPassword } = useContext(UserContext);
+  const { name, setname, email, setEmail, password, setPassword } = useContext(UserContext);
   const [action, setAction] = useState("Sign-Up");
 
   const handleAction = async (actionType) => {
@@ -18,7 +18,7 @@ const LoginSignup = () => {
       let response;
       if (actionType === "Sign-Up") {
         response = await axios.post('http://localhost:3000/Signup', {
-          name: username,
+          name: name,
           email: email,
           password: password
         });
@@ -54,7 +54,7 @@ const LoginSignup = () => {
           {action === "Login" ? null : (
             <div className="input">
               <img src={user_icon} alt="" />
-              <input placeholder='Username' type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+              <input placeholder='Username' type="text" value={name} onChange={(e) => setname(e.target.value)} />
             </div>
           )}
           <div className="input">
