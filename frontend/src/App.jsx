@@ -8,6 +8,7 @@ const ProtectedRoute = ({ element: Component, ...rest }) => {
   const token = localStorage.getItem('token');
   return token ? <Component {...rest} /> : <Navigate to="/" />;
 };
+import ThankYou from './assets/thankyoucomponent.jsx';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           path="/dashboard"
           element={<ProtectedRoute element={Dashboard} />}
         />
+        <Route path="/thankyou" element={<ThankYou />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       </UserProvider>

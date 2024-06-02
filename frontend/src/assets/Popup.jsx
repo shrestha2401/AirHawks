@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react';
 import { Box, Text, Button, Flex } from "@chakra-ui/react";
 import { UserContext } from './Usercontext.jsx';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { redirect, useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 const Popup = ({ baseFare, onClose }) => {
@@ -59,10 +59,10 @@ const Popup = ({ baseFare, onClose }) => {
                         }
                     );
                     const jsonRes = validateRes.data;
-                    console.log(jsonRes);
+                    console.log(jsonRes.paymentId);
                     if (jsonRes.msg === 'success') {
-                        alert('Payment successful!');
-                        navigate('/dashboard'); // Navigate to the dashboard or appropriate page on success
+                        // alert('Payment successful!');
+                        navigate(`/thankyou?reference=${jsonRes.paymentId}`); 
                     } else {
                         alert('Payment validation failed. Please try again.');
                     }
