@@ -6,7 +6,7 @@ import axios from 'axios';
 import { redirect, useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
-const Popup = ({ baseFare, onClose }) => {
+const Popup = ({ baseFare, onClose , flight}) => {
     const [passengerCount, setPassengerCount] = useState(1);
     const { username } = useContext(UserContext);
     const navigate = useNavigate();
@@ -147,6 +147,10 @@ const Popup = ({ baseFare, onClose }) => {
                 </Flex>
                 <Box mb={4}>
                     <Text>Passenger Name: {username}</Text>
+                    <Text>Boarding Point: {flight.location.code}</Text>
+                    <Text>Landing Point: {flight.destination.code}</Text>
+                    <Text>Time: {new Date(flight.date).toLocaleString()}</Text>
+                    <Text>Duration: 2.5 hours</Text>
                     <Text>Base Fare: INR {baseFare.toFixed(2)}</Text>
                     <Text>Tax Rate: {taxRate * 100}%</Text>
                     <Text>Final Price: INR {finalPrice.toFixed(2)}</Text>

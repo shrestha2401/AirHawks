@@ -37,12 +37,9 @@ const FlightSearch = () => {
 
   const handleSearch = () => {
     if (boardingCity && destinationCity && selectedDate) {
-      // Format selectedDate to a local date string (yyyy-mm-dd)
       const selectedDateString = formatDateToLocalString(selectedDate);
       console.log('Selected Date:', selectedDateString);
-
       const filteredFlights = allFlights.filter(flight => {
-        // Format flight date to a local date string (yyyy-mm-dd)
         const flightDate = formatDateToLocalString(new Date(flight.date));
         console.log('Flight Date:', flightDate);
 

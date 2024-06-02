@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Box, Badge, Image, Text, Button, Flex, Divider } from '@chakra-ui/react';
 import placeholderImage from './placeholder.jpg';
 import Popup from "./Popup.jsx";
 import Comments from './comments.jsx';
+import { UserContext } from './Usercontext';
 
 const FlightCard = ({ flight }) => {
   const [showPopup, setShowPopup] = useState(false);
   const baseFare = flight.price_in_inr;
+  const { addFlightDetail } = useContext(UserContext);
+
+  const handleBookNow = () => {
+    setShowPopup(true);
+    addFlightDetail(flight); 
+  };
 
   return (
     <Box borderWidth="1px" borderRadius="lg" overflow="hidden" mb={5}>
@@ -60,16 +67,17 @@ const FlightCard = ({ flight }) => {
       </Box>
       
       <Flex justify="center">
-        <Button colorScheme='teal' size='md' mb={5} onClick={() => setShowPopup(true)} >Book Now</Button>
+        <Button colorScheme='teal' size='md' mb={5} onClick={handleBookNow}>Book Now</Button>
         {showPopup && 
           <Popup 
             baseFare={baseFare} 
             onClose={() => setShowPopup(false)} 
+            flight={flight} 
           />
         }
       </Flex>
       <Comments/>
-      </Box>  
+    </Box>  
   );
 };
 
