@@ -1,5 +1,6 @@
 import React from 'react';
 import Dropdown from './Dropdown';
+import './homepage.css'
 
 function HomePage() {
   return (
@@ -8,7 +9,7 @@ function HomePage() {
       <Dropdown />
       {/* Add other content as needed */}
     </div>
-  );
+      );
 }
 
 export default HomePage;

@@ -27,9 +27,9 @@ export default function Navbar(props) {
           <Button as={Button} mr = {4}>Home</Button>
             <MenuButton as={Button}>Info</MenuButton>
             <MenuList>
-              <MenuItem href="#">Manage Your Flight</MenuItem>
+              <MenuItem as='a' href="/manage">Manage Your Flight</MenuItem>
               <MenuItem href="#">Flight Status</MenuItem>
-              <MenuItem href="#">Contact Us</MenuItem>
+              <MenuItem as='a' href="/contactus">Contact Us</MenuItem>
             </MenuList>
           </Menu>
         </Flex>
