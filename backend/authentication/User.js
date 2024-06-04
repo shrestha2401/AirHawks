@@ -20,6 +20,10 @@ const UserSchema = new mongoose.Schema({
       code: { type: String, required: true },
       name: { type: String, required: true }
     },
+    no_of_passengers:{
+       type : Number,
+       required : true,
+    },
     destination: {
       code: { type: String, required: true },
       name: { type: String, required: true }

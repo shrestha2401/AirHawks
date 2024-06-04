@@ -1,10 +1,18 @@
 import React from 'react';
 import { Box, Heading, Text, Button, VStack } from "@chakra-ui/react";
 import { useSearchParams } from 'react-router-dom';
+
 const ThankYou = () => {
-    const searchQuery = useSearchParams()[0];
-    const paymentid = searchQuery.get("reference");
-    console.log(paymentid);
+    const [searchParams] = useSearchParams();
+    const dataParam = searchParams.get("reference");
+
+    let data = {};
+    if (dataParam) {
+        data = JSON.parse(decodeURIComponent(dataParam));
+    }
+
+    const { paymentid, location_code, destination_code , date , price } = data;
+
     return (
         <Box 
             display="flex" 
@@ -32,6 +40,26 @@ const ThankYou = () => {
                     {paymentid && (
                         <Text fontSize="md" color="gray.500">
                             Your reference ID is: <strong>{paymentid}</strong>
+                        </Text>
+                    )}
+                    {location_code && (
+                        <Text fontSize="md" color="gray.500">
+                            Location Code: <strong>{location_code}</strong>
+                        </Text>
+                    )}
+                    {destination_code && (
+                        <Text fontSize="md" color="gray.500">
+                            Destination Code: <strong>{destination_code}</strong>
+                        </Text>
+                    )}
+                    {date && (
+                        <Text fontSize="md" color="gray.500">
+                            Date: <strong>{date}</strong>
+                        </Text>
+                    )}
+                    {price && (
+                        <Text fontSize="md" color="gray.500">
+                           Ticket Price: <strong>{price}</strong>
                         </Text>
                     )}
                     <Button 

@@ -1,14 +1,13 @@
-
 import React, { useContext, useState } from 'react';
 import { Box, Text, Button, Flex } from "@chakra-ui/react";
 import { UserContext } from './Usercontext.jsx';
 import axios from 'axios';
-import { redirect, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
-const Popup = ({ baseFare, onClose , flight}) => {
+const Popup = ({ baseFare, onClose, flight }) => {
     const [passengerCount, setPassengerCount] = useState(1);
-    const { username } = useContext(UserContext);
+    const { name, email, flights_attended } = useContext(UserContext);
     const navigate = useNavigate();
     const taxRate = 0.10;
 
@@ -28,7 +27,7 @@ const Popup = ({ baseFare, onClose , flight}) => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:3000/order', {
-                name: username,
+                name: name,
                 amount: Math.round(finalPrice * 100), // Razorpay expects the amount in paise
                 currency: "INR",
                 receipt: uuidv4(),
@@ -38,7 +37,7 @@ const Popup = ({ baseFare, onClose , flight}) => {
             console.log(order);
 
             const options = {
-                key: import.meta.env.RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
+                key: import.meta.env.RAZORPAY_KEY_ID, // Use VITE_ for environment variables in Vite
                 amount: order.amount, // Amount is in currency subunits. Default currency is INR.
                 currency: order.currency,
                 name: "AirHawks", // your business name
@@ -60,16 +59,49 @@ const Popup = ({ baseFare, onClose , flight}) => {
                     );
                     const jsonRes = validateRes.data;
                     console.log(jsonRes.paymentId);
+                    const flightd = {
+                        paymentid: jsonRes.paymentId,
+                        location_code: flight.location.code,
+                        destination_code: flight.destination.code,
+                        date : flight.date,
+                        price : finalPrice
+                    };
+                 
+                    const jsonString = JSON.stringify(flightd);
+
                     if (jsonRes.msg === 'success') {
-                        // alert('Payment successful!');
-                        navigate(`/thankyou?reference=${jsonRes.paymentId}`); 
+                        await axios.post('http://localhost:3000/save-flight', {
+                            email: email, 
+                            flights_details: [
+                                {
+                                    location: {
+                                        code: flight.location.code,
+                                        name: flight.location.name,
+                                    },
+                                    no_of_passengers: passengerCount,
+                                    destination: {
+                                        code: flight.destination.code,
+                                        name: flight.destination.name,
+                                    },
+                                    date: flight.date,
+                                    price_in_inr: finalPrice,
+                                    non_stop: flight.non_stop, 
+                                    payment_receipt: jsonRes.paymentId,
+                                },
+                            ],
+                        });
+                        await axios.post('http://localhost:3000/update-flightcount' , {
+                            email : email,
+                        });
+                        
+                        navigate(`/thankyou?reference=${jsonString}`);
                     } else {
                         alert('Payment validation failed. Please try again.');
                     }
                 },
                 prefill: {
-                    name: username, // your customer's name
-                    email: "webdevmatrix@example.com",
+                    name: name, // your customer's name
+                    email: email,
                     contact: "9000000000", // Provide the customer's phone number for better conversion rates
                 },
                 notes: {
@@ -146,7 +178,7 @@ const Popup = ({ baseFare, onClose , flight}) => {
                     </Button>
                 </Flex>
                 <Box mb={4}>
-                    <Text>Passenger Name: {username}</Text>
+                    <Text>Passenger Name: {name}</Text>
                     <Text>Boarding Point: {flight.location.code}</Text>
                     <Text>Landing Point: {flight.destination.code}</Text>
                     <Text>Time: {new Date(flight.date).toLocaleString()}</Text>
