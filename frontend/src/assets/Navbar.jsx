@@ -11,7 +11,7 @@ const Logout = (navigate) => {
 
 export default function Navbar(props) {
   const navigate = useNavigate();
-  const [username, setUsername] = useState('');
+  // const [username, setUsername] = useState('');
 
   const handleLogout = () => {
     Logout(navigate); 
@@ -22,7 +22,6 @@ export default function Navbar(props) {
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <Flex alignItems="center">
           <Menu>
-          <Button as={Button} mr = {4}>Home</Button>
             <MenuButton as={Button}>Info</MenuButton>
             <MenuList>
               <MenuItem as='a' href="/manage">Manage Your Flight</MenuItem>

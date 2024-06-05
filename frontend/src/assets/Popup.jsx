@@ -4,13 +4,15 @@ import { UserContext } from './Usercontext.jsx';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
+import { toast } from 'react-toastify';
 
 const Popup = ({ baseFare, onClose, flight }) => {
     const [passengerCount, setPassengerCount] = useState(1);
     const { name, email, flights_attended } = useContext(UserContext);
     const navigate = useNavigate();
     const taxRate = 0.10;
-
+    
+   
     const incrementPassengers = () => {
         setPassengerCount(passengerCount + 1);
     };
@@ -28,7 +30,7 @@ const Popup = ({ baseFare, onClose, flight }) => {
         try {
             const response = await axios.post('http://localhost:3000/order', {
                 name: name,
-                amount: Math.round(finalPrice * 100), // Razorpay expects the amount in paise
+                amount: Math.round(finalPrice * 100), 
                 currency: "INR",
                 receipt: uuidv4(),
             });
@@ -37,12 +39,12 @@ const Popup = ({ baseFare, onClose, flight }) => {
             console.log(order);
 
             const options = {
-                key: import.meta.env.RAZORPAY_KEY_ID, // Use VITE_ for environment variables in Vite
-                amount: order.amount, // Amount is in currency subunits. Default currency is INR.
+                key: import.meta.env.RAZORPAY_KEY_ID,
+                amount: order.amount, 
                 currency: order.currency,
-                name: "AirHawks", // your business name
+                name: "AirHawks", 
                 description: "Test Transaction",
-                order_id: order.id, // This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                order_id: order.id,
                 handler: async function (response) {
                     const body = {
                         ...response,
@@ -93,16 +95,17 @@ const Popup = ({ baseFare, onClose, flight }) => {
                         await axios.post('http://localhost:3000/update-flightcount' , {
                             email : email,
                         });
-                        
+                        toast.success('Your Payment was successful');
                         navigate(`/thankyou?reference=${jsonString}`);
+                       
                     } else {
                         alert('Payment validation failed. Please try again.');
                     }
                 },
                 prefill: {
-                    name: name, // your customer's name
+                    name: name,
                     email: email,
-                    contact: "9000000000", // Provide the customer's phone number for better conversion rates
+                    contact: "9000000000", 
                 },
                 notes: {
                     address: "Razorpay Corporate Office",
@@ -125,6 +128,7 @@ const Popup = ({ baseFare, onClose, flight }) => {
             rzp1.open();
         } catch (error) {
             if (error.response && error.response.data) {
+                toast.error('An error occurred. Please try again.');
                 alert("Some issue occurred: " + error.response.data.message);
             } else {
                 console.error('Error:', error);

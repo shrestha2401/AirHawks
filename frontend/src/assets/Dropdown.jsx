@@ -12,6 +12,7 @@ const FlightSearch = () => {
   const [destinationCities, setDestinationCities] = useState([]);
   const [flights, setFlights] = useState([]);
   const [allFlights, setAllFlights] = useState([]);
+  // const [showreviews, setsetshowreviews] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:3000/flights')

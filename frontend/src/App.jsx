@@ -11,12 +11,14 @@ const ProtectedRoute = ({ element: Component, ...rest }) => {
 };
 import ThankYou from './assets/thankyoucomponent.jsx';
 import ContactUs from './assets/ContactUs.jsx';
-import Navbar from './assets/Navbar.jsx';
-
+// import Navbar from './assets/Navbar.jsx';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
   return (
     
     <Router>
+      <ToastContainer />
       <UserProvider>
       <Routes>
         <Route exact path="/" element={<LoginSignup />} />

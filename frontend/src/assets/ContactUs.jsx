@@ -12,13 +12,13 @@ export default function ContactUs() {
     <Stack direction={['row']} align='center' divider={<StackDivider />} spacing='4'>
       <Box>
         <Heading size='xs' textTransform='uppercase'>
-          Name 1
+          Shrestha Pandey
         </Heading>
         <Text pt='2' fontSize='sm'>
-          Contact: +91-79232983293
+          Contact: +91-9140XXXXXX
         </Text>
         <Text fontSize='sm'>
-          E-mail: a@gmail.com
+          E-mail: shresthapandey69@gmail.com
         </Text>
       </Box>
       <Box>
@@ -26,10 +26,10 @@ export default function ContactUs() {
           Name 2
         </Heading>
         <Text pt='2' fontSize='sm'>
-          Contact: +91-79232983293
+          Contact: +91-7049XXXXX
         </Text>
         <Text  fontSize='sm'>
-          E-mail: a@gmail.com
+          E-mail: helloworlditsmekrisz@gmail.com
         </Text>
       </Box>
     </Stack>
