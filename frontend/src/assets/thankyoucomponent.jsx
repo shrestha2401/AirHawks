@@ -1,11 +1,12 @@
 import React from 'react';
 import { Box, Heading, Text, Button, VStack } from "@chakra-ui/react";
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 const ThankYou = () => {
     const [searchParams] = useSearchParams();
     const dataParam = searchParams.get("reference");
-
+    const navigate = useNavigate();
     let data = {};
     if (dataParam) {
         data = JSON.parse(decodeURIComponent(dataParam));
@@ -65,7 +66,7 @@ const ThankYou = () => {
                     <Button 
                         colorScheme="teal" 
                         size="lg" 
-                        onClick={() => window.location.href = '/dashboard'}
+                        onClick={() => navigate('/dashboard')}
                     >
                         Go to Homepage
                     </Button>

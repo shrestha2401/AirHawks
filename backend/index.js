@@ -9,9 +9,10 @@ const paymentRoutes = require('./api/payment.js');
 const bodyParser = require("body-parser");
 const saveflightrouter = require('./api/saveflight.js')
 const flightcountrouter = require('./api/updateflightattended.js')
+const cancelticketrouter = require('./api/cancelticket.js')
+const manageflightrouter = require('./api/manageflight.js')
 mongoose.connect(process.env.MONGODB_URI);
 const flightDBConnection = mongoose.createConnection(process.env.MONGODB_URI_ANOTHER);
-
 const app = express();
 app.use(bodyParser.json());
 app.use(express.json());
@@ -22,6 +23,8 @@ app.use('/flights', flightRouter(flightDBConnection));
 app.use(paymentRoutes);
 app.use(saveflightrouter);
 app.use(flightcountrouter);
+app.use(manageflightrouter);
+app.use(cancelticketrouter);
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
