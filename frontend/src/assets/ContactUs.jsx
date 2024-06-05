@@ -23,7 +23,7 @@ export default function ContactUs() {
       </Box>
       <Box>
         <Heading size='xs' textTransform='uppercase'>
-          Name 2
+          Krishna Agarwal
         </Heading>
         <Text pt='2' fontSize='sm'>
           Contact: +91-7049XXXXX
