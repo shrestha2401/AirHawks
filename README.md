@@ -1,50 +1,28 @@
 # AirHawks
 
-AirHawks is a web application designed to provide seamless user authentication and interaction using a modern tech stack. The project consists of a frontend built with React and Vite, and a backend powered by Express.js.
+AirHawks is a flight booking application with the following features:
 
-## Table of Contents
-
-- [AirHawks](#airhawks)
-  - [Table of Contents](#table-of-contents)
-  - [Project Structure](#project-structure)
-  - [Features](#features)
-  - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-    - [Running the Application](#running-the-application)
-  - [Usage](#usage)
-    - [Frontend](#frontend)
-    - [Backend](#backend)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Contact](#contact)
-
-## Project Structure
-
-The project is divided into two main parts:
-
-- `frontend`: Contains the React application built with Vite.
-- `backend`: Contains the Express.js server for handling authentication and other API requests.
-
-## Features
-
-- User signup and login functionality
-- Password hashing for secure storage
-- JWT-based authentication
-- Modern frontend development with React and Vite
+- Secure user authentication using JWT tokens.
+- React + Vite based frontend framework.
+- Integration with Razorpay payment gateway for secure transactions.
+- MongoDB database for storing user information and flight details.
+- Chakra UI based frontend for a sleek and modern user interface.
 
 ## Getting Started
 
-Follow these instructions to set up the project on your local machine.
+To get started with AirHawks, follow these steps:
 
-### Prerequisites
-
-Make sure you have the following installed:
-
-- Node.js (https://nodejs.org/)
-- npm (comes with Node.js)
-- Git (https://git-scm.com/)
-
-### Installation
-
-
+1. Clone the repository:
+```git clone https://github.com/your-username/AirHawks.git```
+2. Change directory to frontend:
+```cd frontend```
+3. Install dependencies:
+```npm install```
+4. Run frontend server:
+```npm run dev```
+6. Navigate to backend directory in terminal
+7. Install dependencies:
+```npm install```
+8. Start backend server:
+```nodemon index.js```
+9. Make sure to setup your own .env file
