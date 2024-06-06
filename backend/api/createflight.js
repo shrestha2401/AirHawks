@@ -13,7 +13,8 @@ router.post('/create-flight', async (req, res) => {
       destinationCode,
       date,
       price_in_inr,
-      non_stop
+      non_stop,
+      seats_available
     } = req.body;
 
     try {
@@ -31,7 +32,8 @@ router.post('/create-flight', async (req, res) => {
         },
         date,
         price_in_inr,
-        non_stop
+        non_stop,
+        seats_available
       });
       await newFlight.save();
       res.status(201).json({ message: "Flight created successfully" });

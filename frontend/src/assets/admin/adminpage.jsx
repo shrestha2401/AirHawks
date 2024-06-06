@@ -24,6 +24,7 @@ const AdminPortal = () => {
   const [destinationCode, setDestinationCode] = useState('');
   const [date, setDate] = useState('');
   const [price, setPrice] = useState('');
+  const [number_of_seats, setSeats] = useState('');
   const [nonStop, setNonStop] = useState(false);
 
   const handleCreateFlight = () => {
@@ -36,7 +37,8 @@ const AdminPortal = () => {
       destinationCode: destinationCode,
       date: date,
       price_in_inr: price,
-      non_stop: nonStop
+      non_stop: nonStop,
+      seats_available : number_of_seats,
     }).then(response=>{
       if(response.data.message=="Flight created successfully"){
         toast({
@@ -98,6 +100,10 @@ const AdminPortal = () => {
                 <FormControl>
                   <FormLabel>Destination Code</FormLabel>
                   <Input value={destinationCode} onChange={(e) => setDestinationCode(e.target.value)} />
+                </FormControl>
+                <FormControl>
+                  <FormLabel>Number of Seats</FormLabel>
+                  <Input value={number_of_seats} onChange={(e) => setSeats(e.target.value)} />
                 </FormControl>
                 <FormControl>
                   <FormLabel>Date</FormLabel>

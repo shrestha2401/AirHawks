@@ -82,6 +82,10 @@ const FlightCard = ({ flight }) => {
           {new Date(flight.date).toDateString()}
         </Box>
         <Box mt="2">
+          <Text fontWeight="semibold">Seats left:</Text>
+          {flight.seats_available}
+        </Box>
+        <Box mt="2">
           <Text fontWeight="semibold">Duration:</Text>
           {flight.duration || '2.5 hours'}
         </Box>

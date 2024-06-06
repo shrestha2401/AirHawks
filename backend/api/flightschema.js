@@ -14,6 +14,9 @@ const flightSchema = new mongoose.Schema({
   date: { type: Date, required: true },
   price_in_inr: { type: Number, required: true },
   non_stop: { type: Boolean, default: false },
+  seats_available : {
+     type : Number,
+  },
   reviews: [{
     name: { type: String },
     rating: { type: Number },
