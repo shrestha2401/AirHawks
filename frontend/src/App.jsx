@@ -11,10 +11,15 @@ import ContactUs from './assets/ContactUs';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LandingPage from './assets/landingpage.jsx';
-
+import AdminLogin from './assets/admin/adminlogin.jsx';
+import AdminPortal from './assets/admin/adminpage.jsx';
 const ProtectedRoute = ({ element: Component, ...rest }) => {
   const token = localStorage.getItem('token');
   return token ? <Component {...rest} /> : <Navigate to="/" />;
+};
+const AdminProtectedRoute = ({ element: Component, ...rest }) => {
+  const adminToken = localStorage.getItem('adminToken');
+  return adminToken ? <Component {...rest} /> : <Navigate to="/admin-portal" />;
 };
 
 const App = () => {
@@ -24,6 +29,8 @@ const App = () => {
       <UserProvider>
         <Routes>
           <Route exact path="/" element={<LandingPage/>} />
+          <Route path="/admin-login" element={<AdminLogin/>} />
+          <Route path="/admin-portal" element={<AdminProtectedRoute element={AdminPortal} />}/> 
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<ProtectedRoute element={Dashboard} />} />
