@@ -1,16 +1,22 @@
-// api.js
-import axios from 'axios';
 
-const api = axios.create({
-  baseURL: 'http://localhost:3000',
-});
+const jwt = require('jsonwebtoken');
+const jwtPassword = "123456";
 
-api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('token');
-  if (token) {
-    config.headers['Authorization'] = `Bearer ${token}`;
+const authenticateToken = (req, res, next) => {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+  
+  if (!token) {
+    return res.sendStatus(401);
   }
-  return config;
-});
 
-export default api;
+  jwt.verify(token, jwtPassword, (err, user) => {
+    if (err) {
+      return res.sendStatus(403);
+    }
+    req.user = user;
+    next();
+  });
+};
+
+module.exports = authenticateToken;

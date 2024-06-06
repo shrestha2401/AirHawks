@@ -13,6 +13,7 @@ const cancelticketrouter = require('./api/cancelticket.js')
 const manageflightrouter = require('./api/manageflight.js')
 const ratcomrouter = require('./api/ratcom.js');
 const fetchratingrouter = require('./api/fetchrating.js');
+const userinforoute = require('./authentication/userinfo.js')
 mongoose.connect(process.env.MONGODB_URI);
 const flightDBConnection = mongoose.createConnection(process.env.MONGODB_URI_ANOTHER);
 const app = express();
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use(cors());
 app.use(loginRoutes);
 app.use(signupRoutes);
+app.use(userinforoute);
 app.use('/flights', flightRouter(flightDBConnection));
 app.use(ratcomrouter(flightDBConnection));
 app.use(fetchratingrouter(flightDBConnection));
