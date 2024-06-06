@@ -46,6 +46,7 @@ const FlightCard = ({ flight }) => {
       comment: comment
     }).then(response => {
       console.log(response.data); 
+      alert('Review added successfully');
     }).catch(error => {
       console.error('Error adding review:', error); 
     });

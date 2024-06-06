@@ -1,4 +1,4 @@
-// src/LoginSignup.jsx
+
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { Box, Button, Container, Flex, FormControl, FormLabel, Heading, Image, Input, Stack, useToast } from '@chakra-ui/react';
@@ -8,34 +8,25 @@ import user_icon from './person.png';
 import email_icon from './email.png';
 import password_icon from './password.png';
 
-const LoginSignup = () => {
+const Signup = () => {
   const navigate = useNavigate();
   const { name, setname, email, setEmail, password, setPassword } = useContext(UserContext);
-  const [action, setAction] = useState("Sign-Up");
   const toast = useToast();
 
-  const handleAction = async (actionType) => {
+  const handleSignup = async () => {
     try {
-      let response;
-      if (actionType === "Sign-Up") {
-        response = await axios.post('http://localhost:3000/Signup', {
-          name: name,
-          email: email,
-          password: password
-        });
-      } else if (actionType === "Login") {
-        response = await axios.post('http://localhost:3000/Login', {
-          email: email,
-          password: password
-        });
-      }
+      const response = await axios.post('http://localhost:3000/Signup', {
+        name: name,
+        email: email,
+        password: password
+      });
       toast({
         title: response.data.message,
-        status: response.data.message === "Success" || response.data.message === "Login successful" ? "success" : "error",
+        status: response.data.message === "Success" ? "success" : "error",
         duration: 5000,
         isClosable: true,
       });
-      if (response.data.message === "Success" || response.data.message === "Login successful") {
+      if (response.data.message === "Success") {
         localStorage.setItem('token', response.data.token); // Save token to localStorage
         navigate('/dashboard');
       }
@@ -53,17 +44,15 @@ const LoginSignup = () => {
   return (
     <Container centerContent>
       <Box bg="white" p={8} borderRadius="lg" boxShadow="lg" w="100%" maxW="md">
-        <Heading mb={6} textAlign="center">Welcome to AirHawks</Heading>
+        <Heading mb={6} textAlign="center">Sign Up for AirHawks</Heading>
         <Stack spacing={4}>
-          {action === "Login" ? null : (
-            <FormControl>
-              <FormLabel>Username</FormLabel>
-              <Flex align="center">
-                <Image src={user_icon} alt="user icon" boxSize="6" mr={2} />
-                <Input placeholder='Username' type="text" value={name} onChange={(e) => setname(e.target.value)} />
-              </Flex>
-            </FormControl>
-          )}
+          <FormControl>
+            <FormLabel>Username</FormLabel>
+            <Flex align="center">
+              <Image src={user_icon} alt="user icon" boxSize="6" mr={2} />
+              <Input placeholder='Username' type="text" value={name} onChange={(e) => setname(e.target.value)} />
+            </Flex>
+          </FormControl>
           <FormControl>
             <FormLabel>Email</FormLabel>
             <Flex align="center">
@@ -78,14 +67,11 @@ const LoginSignup = () => {
               <Input placeholder='Password' type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
             </Flex>
           </FormControl>
-          <Stack spacing={4} direction="row" justify="center">
-            <Button colorScheme={action === "Login" ? "gray" : "blue"} onClick={() => handleAction("Sign-Up")}>Sign Up</Button>
-            <Button colorScheme={action === "Sign-Up" ? "gray" : "green"} onClick={() => handleAction("Login")}>Login</Button>
-          </Stack>
+          <Button colorScheme="blue" onClick={handleSignup}>Sign Up</Button>
         </Stack>
       </Box>
     </Container>
   );
 };
 
-export default LoginSignup;
+export default Signup;
