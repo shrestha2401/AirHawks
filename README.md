@@ -7,6 +7,7 @@ AirHawks is a flight booking application with the following features:
 - Integration with Razorpay payment gateway for secure transactions.
 - MongoDB database for storing user information and flight details.
 - Chakra UI based frontend for a sleek and modern user interface.
+- Admin portal for Adding flights
 
 ## Getting Started
 
