@@ -19,7 +19,7 @@ const LandingPage = () => {
         <Spacer />
         <Button colorScheme="blue" mr={4} onClick={() => navigate('/login')}>Login</Button>
         <Button colorScheme="green" onClick={() => navigate('/signup')}>Sign Up</Button>
-        <Button colorScheme="red" marginLeft={4} onClick={() => navigate('/admin-login')}>Admin Login</Button>
+        <Button colorScheme="red" ml={4} marginLeft={4} onClick={() => navigate('/admin-login')}>Admin Login</Button>
       </Flex>
       <Box p={9} mt="10">
       <Heading w="80%" mx="auto" textAlign="center" h="50%" size="2xl">

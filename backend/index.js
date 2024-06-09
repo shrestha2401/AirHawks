@@ -16,15 +16,17 @@ const fetchratingrouter = require('./api/fetchrating.js');
 const userinforoute = require('./authentication/userinfo.js')
 const adminroute = require('./admin/admin.js')
 const createflightroute = require('./api/createflight.js')
+const admindeleteUser = require('./admin/deleteUser.js')
 mongoose.connect(process.env.MONGODB_URI);
 const flightDBConnection = mongoose.createConnection(process.env.MONGODB_URI_ANOTHER);
-const adminDBConnection = mongoose.createConnection("mongodb+srv://admin:Airhawks123@airhawks-database.q7484wt.mongodb.net/admin_portal");
+const adminDBConnection = mongoose.createConnection(process.env.ADMIN_URI);
 const app = express();
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors());
 app.use(loginRoutes);
 app.use(signupRoutes);
+app.use(admindeleteUser);
 app.use(userinforoute);
 app.use('/flights', flightRouter(flightDBConnection));
 app.use(ratcomrouter(flightDBConnection));
