@@ -1,110 +1,102 @@
-
-[   {
-    "airline": "Indigo",
-    "flightNumber": "6E-123",
-    "location": {
-      "code": "TIR",
-      "name": "Tirupati Airport, Tirupati"
-    },
-    "destination": {
-      "code": "HYD",
-      "name": "Rajiv Gandhi International Airport, Hyderabad"
-    },
-    "date": "2024-06-23T10:00:00.000Z",
-    "price_in_inr": 12773,
-    "non_stop": true
+[{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd173077"
   },
-  {
-    "airline": "Air India",
-    "flightNumber": "AI-202",
-    "location": {
-      "code": "BLR",
-      "name": "Kempegowda International Airport, Bangalore"
-    },
-    "destination": {
-      "code": "DEL",
-      "name": "Indira Gandhi International Airport, New Delhi"
-    },
-    "date": "2024-07-15T15:00:00.000Z",
-    "price_in_inr": 14500,
-    "non_stop": false
+  "airline": "GoAir",
+  "flightNumber": "G8-321",
+  "location": {
+    "code": "PNQ",
+    "name": "Pune Airport, Pune"
   },
-  {
-    "airline": "SpiceJet",
-    "flightNumber": "SG-456",
-    "location": {
-      "code": "DEL",
-      "name": "Indira Gandhi International Airport, New Delhi"
-    },
-    "destination": {
-      "code": "BOM",
-      "name": "Chhatrapati Shivaji Maharaj International Airport, Mumbai"
-    },
-    "date": "2024-06-01T08:30:00.000Z",
-    "price_in_inr": 11500,
-    "non_stop": true
+  "destination": {
+    "code": "GOI",
+    "name": "Goa International Airport, Goa"
   },
-  {
-    "airline": "Vistara",
-    "flightNumber": "UK-789",
-    "location": {
-      "code": "CCU",
-      "name": "Netaji Subhas Chandra Bose International Airport, Kolkata"
-    },
-    "destination": {
-      "code": "MAA",
-      "name": "Chennai International Airport, Chennai"
-    },
-    "date": "2024-06-02T11:45:00.000Z",
-    "price_in_inr": 13500,
-    "non_stop": true
+  "date": "2024-06-03T13:20:00.000Z",
+  "price_in_inr": 9500,
+  "non_stop": true,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd173076"
   },
-  {
-    "airline": "GoAir",
-    "flightNumber": "G8-321",
-    "location": {
-      "code": "PNQ",
-      "name": "Pune Airport, Pune"
-    },
-    "destination": {
-      "code": "GOI",
-      "name": "Goa International Airport, Goa"
-    },
-    "date": "2024-06-03T13:20:00.000Z",
-    "price_in_inr": 9500,
-    "non_stop": true
+  "airline": "Vistara",
+  "flightNumber": "UK-789",
+  "location": {
+    "code": "CCU",
+    "name": "Netaji Subhas Chandra Bose International Airport, Kolkata"
   },
-  {
-    "airline": "AirAsia",
-    "flightNumber": "AK-555",
-    "location": {
-      "code": "COK",
-      "name": "Cochin International Airport, Kochi"
-    },
-    "destination": {
-      "code": "BLR",
-      "name": "Kempegowda International Airport, Bangalore"
-    },
-    "date": "2024-06-04T14:15:00.000Z",
-    "price_in_inr": 12000,
-    "non_stop": false
+  "destination": {
+    "code": "MAA",
+    "name": "Chennai International Airport, Chennai"
   },
-  {
-    "airline": "GoAir",
-    "flightNumber": "G8-234",
-    "location": {
-      "code": "GOI",
-      "name": "Goa International Airport, Goa"
+  "date": "2024-06-02T11:45:00.000Z",
+  "price_in_inr": 13500,
+  "non_stop": true,
+  "ratings": [],
+  "__v": 4,
+  "reviews": [
+    {
+      "name": "John Doe",
+      "rating": 5,
+      "comment": "Great flight, very comfortable!",
+      "_id": {
+        "$oid": "6660a9ef62ab8a0de34b2d71"
+      }
     },
-    "destination": {
-      "code": "BOM",
-      "name": "Chhatrapati Shivaji Maharaj International Airport, Mumbai"
+    {
+      "name": "John Doe",
+      "rating": 5,
+      "comment": "Great flight, very comfortable!",
+      "_id": {
+        "$oid": "6660aa4397017bd79aeca609"
+      }
     },
-    "date": "2024-06-05T09:10:00.000Z",
-    "price_in_inr": 10500,
-    "non_stop": true
+    {
+      "name": "John Doe",
+      "rating": 5,
+      "comment": "Great flight, very comfortable!",
+      "_id": {
+        "$oid": "6660aafa6a4b24a21166e324"
+      }
+    },
+    {
+      "name": "John Doe",
+      "rating": 5,
+      "comment": "Great flight, very comfortable!",
+      "_id": {
+        "$oid": "6660b5586a4b24a21166e34a"
+      }
+    }
+  ],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd173078"
   },
-  {
+  "airline": "AirAsia",
+  "flightNumber": "AK-555",
+  "location": {
+    "code": "COK",
+    "name": "Cochin International Airport, Kochi"
+  },
+  "destination": {
+    "code": "BLR",
+    "name": "Kempegowda International Airport, Bangalore"
+  },
+  "date": "2024-06-04T14:15:00.000Z",
+  "price_in_inr": 12000,
+  "non_stop": false,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd17307a"
+  },
   "airline": "Vistara",
   "flightNumber": "UK-123",
   "location": {
@@ -117,202 +109,647 @@
   },
   "date": "2024-06-06T14:45:00.000Z",
   "price_in_inr": 14500,
-  "non_stop": true
+  "non_stop": true,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd17307c"
   },
-  {
-    "airline": "Air India",
-    "flightNumber": "AI-678",
-    "location": {
-      "code": "MAA",
-      "name": "Chennai International Airport, Chennai"
-    },
-    "destination": {
-      "code": "DEL",
-      "name": "Indira Gandhi International Airport, New Delhi"
-    },
-    "date": "2024-06-06T12:30:00.000Z",
-    "price_in_inr": 14000,
-    "non_stop": true
+  "airline": "IndiGo",
+  "flightNumber": "6E-456",
+  "location": {
+    "code": "BOM",
+    "name": "Chhatrapati Shivaji Maharaj International Airport, Mumbai"
   },
-  {
-    "airline": "IndiGo",
-    "flightNumber": "6E-456",
-    "location": {
-      "code": "BOM",
-      "name": "Chhatrapati Shivaji Maharaj International Airport, Mumbai"
-    },
-    "destination": {
-      "code": "HYD",
-      "name": "Rajiv Gandhi International Airport, Hyderabad"
-    },
-    "date": "2024-06-07T16:45:00.000Z",
-    "price_in_inr": 12500,
-    "non_stop": false
+  "destination": {
+    "code": "HYD",
+    "name": "Rajiv Gandhi International Airport, Hyderabad"
   },
-  {
-    "airline": "SpiceJet",
-    "flightNumber": "SG-789",
-    "location": {
-      "code": "BLR",
-      "name": "Kempegowda International Airport, Bangalore"
-    },
-    "destination": {
-      "code": "DEL",
-      "name": "Indira Gandhi International Airport, New Delhi"
-    },
-    "date": "2024-06-08T19:00:00.000Z",
-    "price_in_inr": 13000,
-    "non_stop": true
+  "date": "2024-06-07T16:45:00.000Z",
+  "price_in_inr": 12500,
+  "non_stop": false,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd173081"
   },
-  {
-    "airline": "Emirates",
-    "flightNumber": "EK-501",
-    "location": {
-      "code": "DXB",
-      "name": "Dubai International Airport, Dubai"
-    },
-    "destination": {
-      "code": "LHR",
-      "name": "Heathrow Airport, London"
-    },
-    "date": "2024-06-01T08:00:00.000Z",
-    "price_in_inr": 30000,
-    "non_stop": true
+  "airline": "Lufthansa",
+  "flightNumber": "LH-456",
+  "location": {
+    "code": "FRA",
+    "name": "Frankfurt Airport, Frankfurt"
   },
-  {
-    "airline": "Qatar Airways",
-    "flightNumber": "QR-202",
-    "location": {
-      "code": "DOH",
-      "name": "Hamad International Airport, Doha"
-    },
-    "destination": {
-      "code": "JFK",
-      "name": "John F. Kennedy International Airport, New York"
-    },
-    "date": "2024-06-02T09:30:00.000Z",
-    "price_in_inr": 45000,
-    "non_stop": false
+  "destination": {
+    "code": "JFK",
+    "name": "John F. Kennedy International Airport, New York"
   },
-  {
-    "airline": "Singapore Airlines",
-    "flightNumber": "SQ-305",
-    "location": {
-      "code": "SIN",
-      "name": "Changi Airport, Singapore"
-    },
-    "destination": {
-      "code": "HND",
-      "name": "Haneda Airport, Tokyo"
-    },
-    "date": "2024-06-03T10:45:00.000Z",
-    "price_in_inr": 38000,
-    "non_stop": true
+  "date": "2024-06-04T11:20:00.000Z",
+  "price_in_inr": 42000,
+  "non_stop": true,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd173087"
   },
-  {
-    "airline": "Lufthansa",
-    "flightNumber": "LH-456",
-    "location": {
-      "code": "FRA",
-      "name": "Frankfurt Airport, Frankfurt"
-    },
-    "destination": {
-      "code": "JFK",
-      "name": "John F. Kennedy International Airport, New York"
-    },
-    "date": "2024-06-04T11:20:00.000Z",
-    "price_in_inr": 42000,
-    "non_stop": true
+  "airline": "KLM Royal Dutch Airlines",
+  "flightNumber": "KL-321",
+  "location": {
+    "code": "AMS",
+    "name": "Amsterdam Airport Schiphol, Amsterdam"
   },
-  {
-    "airline": "British Airways",
-    "flightNumber": "BA-789",
-    "location": {
-      "code": "LHR",
-      "name": "Heathrow Airport, London"
-    },
-    "destination": {
-      "code": "CDG",
-      "name": "Charles de Gaulle Airport, Paris"
-    },
-    "date": "2024-06-05T12:10:00.000Z",
-    "price_in_inr": 25000,
-    "non_stop": true
+  "destination": {
+    "code": "DEL",
+    "name": "Indira Gandhi International Airport, New Delhi"
   },
-  {
-    "airline": "Cathay Pacific",
-    "flightNumber": "CX-321",
-    "location": {
-      "code": "HKG",
-      "name": "Hong Kong International Airport, Hong Kong"
-    },
-    "destination": {
-      "code": "SFO",
-      "name": "San Francisco International Airport, San Francisco"
-    },
-    "date": "2024-06-06T13:45:00.000Z",
-    "price_in_inr": 52000,
-    "non_stop": true
+  "date": "2024-06-10T17:30:00.000Z",
+  "price_in_inr": 28000,
+  "non_stop": false,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd17307d"
   },
-  {
-    "airline": "Air India",
-    "flightNumber": "AI-101",
-    "location": {
-      "code": "BOM",
-      "name": "Chhatrapati Shivaji Maharaj International Airport, Mumbai"
-    },
-    "destination": {
-      "code": "JFK",
-      "name": "John F. Kennedy International Airport, New York"
-    },
-    "date": "2024-06-07T14:30:00.000Z",
-    "price_in_inr": 47000,
-    "non_stop": false
+  "airline": "SpiceJet",
+  "flightNumber": "SG-789",
+  "location": {
+    "code": "BLR",
+    "name": "Kempegowda International Airport, Bangalore"
   },
-  {
-    "airline": "Etihad Airways",
-    "flightNumber": "EY-456",
-    "location": {
-      "code": "AUH",
-      "name": "Abu Dhabi International Airport, Abu Dhabi"
-    },
-    "destination": {
-      "code": "LAX",
-      "name": "Los Angeles International Airport, Los Angeles"
-    },
-    "date": "2024-06-08T15:15:00.000Z",
-    "price_in_inr": 55000,
-    "non_stop": true
+  "destination": {
+    "code": "DEL",
+    "name": "Indira Gandhi International Airport, New Delhi"
   },
-  {
-    "airline": "Air France",
-    "flightNumber": "AF-789",
-    "location": {
-      "code": "CDG",
-      "name": "Charles de Gaulle Airport, Paris"
-    },
-    "destination": {
-      "code": "SIN",
-      "name": "Changi Airport, Singapore"
-    },
-    "date": "2024-06-09T16:00:00.000Z",
-    "price_in_inr": 40000,
-    "non_stop": true
+  "date": "2024-06-08T19:00:00.000Z",
+  "price_in_inr": 13000,
+  "non_stop": true,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd173082"
   },
-  {
-    "airline": "KLM Royal Dutch Airlines",
-    "flightNumber": "KL-321",
-    "location": {
-      "code": "AMS",
-      "name": "Amsterdam Airport Schiphol, Amsterdam"
+  "airline": "British Airways",
+  "flightNumber": "BA-789",
+  "location": {
+    "code": "LHR",
+    "name": "Heathrow Airport, London"
+  },
+  "destination": {
+    "code": "CDG",
+    "name": "Charles de Gaulle Airport, Paris"
+  },
+  "date": "2024-06-05T12:10:00.000Z",
+  "price_in_inr": 25000,
+  "non_stop": true,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd173086"
+  },
+  "airline": "Air France",
+  "flightNumber": "AF-789",
+  "location": {
+    "code": "CDG",
+    "name": "Charles de Gaulle Airport, Paris"
+  },
+  "destination": {
+    "code": "SIN",
+    "name": "Changi Airport, Singapore"
+  },
+  "date": "2024-06-09T16:00:00.000Z",
+  "price_in_inr": 40000,
+  "non_stop": true,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd173079"
+  },
+  "airline": "GoAir",
+  "flightNumber": "G8-234",
+  "location": {
+    "code": "GOI",
+    "name": "Goa International Airport, Goa"
+  },
+  "destination": {
+    "code": "BOM",
+    "name": "Chhatrapati Shivaji Maharaj International Airport, Mumbai"
+  },
+  "date": "2024-06-05T09:10:00.000Z",
+  "price_in_inr": 10500,
+  "non_stop": true,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd17307e"
+  },
+  "airline": "Emirates",
+  "flightNumber": "EK-501",
+  "location": {
+    "code": "DXB",
+    "name": "Dubai International Airport, Dubai"
+  },
+  "destination": {
+    "code": "LHR",
+    "name": "Heathrow Airport, London"
+  },
+  "date": "2024-06-01T08:00:00.000Z",
+  "price_in_inr": 30000,
+  "non_stop": true,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd173083"
+  },
+  "airline": "Cathay Pacific",
+  "flightNumber": "CX-321",
+  "location": {
+    "code": "HKG",
+    "name": "Hong Kong International Airport, Hong Kong"
+  },
+  "destination": {
+    "code": "SFO",
+    "name": "San Francisco International Airport, San Francisco"
+  },
+  "date": "2024-06-06T13:45:00.000Z",
+  "price_in_inr": 52000,
+  "non_stop": true,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd17307b"
+  },
+  "airline": "Air India",
+  "flightNumber": "AI-678",
+  "location": {
+    "code": "MAA",
+    "name": "Chennai International Airport, Chennai"
+  },
+  "destination": {
+    "code": "DEL",
+    "name": "Indira Gandhi International Airport, New Delhi"
+  },
+  "date": "2024-06-06T12:30:00.000Z",
+  "price_in_inr": 14000,
+  "non_stop": true,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd173084"
+  },
+  "airline": "Air India",
+  "flightNumber": "AI-101",
+  "location": {
+    "code": "BOM",
+    "name": "Chhatrapati Shivaji Maharaj International Airport, Mumbai"
+  },
+  "destination": {
+    "code": "JFK",
+    "name": "John F. Kennedy International Airport, New York"
+  },
+  "date": "2024-06-07T14:30:00.000Z",
+  "price_in_inr": 47000,
+  "non_stop": false,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd173073"
+  },
+  "airline": "Indigo",
+  "flightNumber": "6E-123",
+  "location": {
+    "code": "TIR",
+    "name": "Tirupati Airport, Tirupati"
+  },
+  "destination": {
+    "code": "HYD",
+    "name": "Rajiv Gandhi International Airport, Hyderabad"
+  },
+  "date": "2024-06-23T10:00:00.000Z",
+  "price_in_inr": 12773,
+  "non_stop": true,
+  "ratings": [
+    {
+      "name": "John Doe",
+      "starRating": 4,
+      "comment": "Good flight, on time."
+    }
+  ],
+  "__v": 7,
+  "reviews": [
+    {
+      "name": "Indigo",
+      "rating": 5,
+      "comment": "great",
+      "_id": {
+        "$oid": "6660bc20907b5fa583e598e4"
+      }
     },
-    "destination": {
-      "code": "DEL",
-      "name": "Indira Gandhi International Airport, New Delhi"
+    {
+      "name": "shre",
+      "rating": 4,
+      "comment": "test review",
+      "_id": {
+        "$oid": "6660be72a24ddd1d7163bf57"
+      }
     },
-    "date": "2024-06-10T17:30:00.000Z",
-    "price_in_inr": 28000,
-    "non_stop": false
-  }
-]
-
+    {
+      "name": "shre",
+      "rating": 3,
+      "comment": "test review",
+      "_id": {
+        "$oid": "6660c2b806965efe2be22658"
+      }
+    },
+    {
+      "name": "admin",
+      "rating": 4,
+      "comment": "test review ",
+      "_id": {
+        "$oid": "6660d39d14d3c75d4dc64df8"
+      }
+    },
+    {
+      "name": "admin",
+      "rating": 3,
+      "comment": "test review ",
+      "_id": {
+        "$oid": "6660dbaf7e8b3e7a7e0612eb"
+      }
+    },
+    {
+      "name": "admin",
+      "rating": 3,
+      "comment": "test comment",
+      "_id": {
+        "$oid": "6660dd997e8b3e7a7e061387"
+      }
+    },
+    {
+      "name": "admin",
+      "rating": 5,
+      "comment": "test",
+      "_id": {
+        "$oid": "666974497f2f9aecd1bfc44f"
+      }
+    }
+  ],
+  "seats_available": 19
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd17307f"
+  },
+  "airline": "Qatar Airways",
+  "flightNumber": "QR-202",
+  "location": {
+    "code": "DOH",
+    "name": "Hamad International Airport, Doha"
+  },
+  "destination": {
+    "code": "JFK",
+    "name": "John F. Kennedy International Airport, New York"
+  },
+  "date": "2024-06-02T09:30:00.000Z",
+  "price_in_inr": 45000,
+  "non_stop": false,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd173085"
+  },
+  "airline": "Etihad Airways",
+  "flightNumber": "EY-456",
+  "location": {
+    "code": "AUH",
+    "name": "Abu Dhabi International Airport, Abu Dhabi"
+  },
+  "destination": {
+    "code": "LAX",
+    "name": "Los Angeles International Airport, Los Angeles"
+  },
+  "date": "2024-06-08T15:15:00.000Z",
+  "price_in_inr": 55000,
+  "non_stop": true,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd173088"
+  },
+  "airline": "Vistara",
+  "flightNumber": "V-69",
+  "location": {
+    "code": "TIR",
+    "name": "Tirupati Airport, Tirupati"
+  },
+  "destination": {
+    "code": "HYD",
+    "name": "Rajiv Gandhi International Airport, Hyderabad"
+  },
+  "date": "2024-06-23T11:00:00.000Z",
+  "price_in_inr": 12773,
+  "non_stop": true,
+  "ratings": [],
+  "seats_available": 18,
+  "__v": 1,
+  "reviews": []
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd173074"
+  },
+  "airline": "Air India",
+  "flightNumber": "AI-202",
+  "location": {
+    "code": "BLR",
+    "name": "Kempegowda International Airport, Bangalore"
+  },
+  "destination": {
+    "code": "DEL",
+    "name": "Indira Gandhi International Airport, New Delhi"
+  },
+  "date": "2024-07-15T15:00:00.000Z",
+  "price_in_inr": 14500,
+  "non_stop": false,
+  "ratings": [
+    {
+      "name": "Jane Smith",
+      "starRating": 5,
+      "comment": "Excellent service."
+    }
+  ],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd173075"
+  },
+  "airline": "SpiceJet",
+  "flightNumber": "SG-456",
+  "location": {
+    "code": "DEL",
+    "name": "Indira Gandhi International Airport, New Delhi"
+  },
+  "destination": {
+    "code": "BOM",
+    "name": "Chhatrapati Shivaji Maharaj International Airport, Mumbai"
+  },
+  "date": "2024-06-01T08:30:00.000Z",
+  "price_in_inr": 11500,
+  "non_stop": true,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "666074833dbe0ca9fd173080"
+  },
+  "airline": "Singapore Airlines",
+  "flightNumber": "SQ-305",
+  "location": {
+    "code": "SIN",
+    "name": "Changi Airport, Singapore"
+  },
+  "destination": {
+    "code": "HND",
+    "name": "Haneda Airport, Tokyo"
+  },
+  "date": "2024-06-03T10:45:00.000Z",
+  "price_in_inr": 38000,
+  "non_stop": true,
+  "ratings": [],
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "66618c4ffba6bdbda7bb54e9"
+  },
+  "airLine": "Vistara",
+  "flightNumber": "V-32",
+  "location": {
+    "code": "KNP",
+    "name": "Kanpur Airport"
+  },
+  "destination": {
+    "code": "LKO",
+    "name": "Lucknow Airport"
+  },
+  "date": {
+    "$date": "2024-06-15T10:00:00.000Z"
+  },
+  "price_in_inr": 5000,
+  "non_stop": true,
+  "reviews": [],
+  "__v": 0,
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "66618ffffba6bdbda7bb54eb"
+  },
+  "airLine": "Luftanza",
+  "flightNumber": "L-124",
+  "location": {
+    "code": "NYC",
+    "name": "New-York International Airport"
+  },
+  "destination": {
+    "code": "BEG",
+    "name": "Begusarai Airport"
+  },
+  "date": {
+    "$date": "2024-06-21T00:00:00.000Z"
+  },
+  "price_in_inr": 1000,
+  "non_stop": true,
+  "reviews": [],
+  "__v": 0,
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "66619006fba6bdbda7bb54ed"
+  },
+  "airLine": "Luftanza",
+  "flightNumber": "L-124",
+  "location": {
+    "code": "NYC",
+    "name": "New-York International Airport"
+  },
+  "destination": {
+    "code": "BEG",
+    "name": "Begusarai Airport"
+  },
+  "date": {
+    "$date": "2024-06-21T00:00:00.000Z"
+  },
+  "price_in_inr": 1000,
+  "non_stop": true,
+  "reviews": [],
+  "__v": 0,
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "6661900cfba6bdbda7bb54ef"
+  },
+  "airLine": "Luftanza",
+  "flightNumber": "L-124",
+  "location": {
+    "code": "NYC",
+    "name": "New-York International Airport"
+  },
+  "destination": {
+    "code": "BEG",
+    "name": "Begusarai Airport"
+  },
+  "date": {
+    "$date": "2024-06-21T00:00:00.000Z"
+  },
+  "price_in_inr": 1000,
+  "non_stop": true,
+  "reviews": [],
+  "__v": 0,
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "6661966afba6bdbda7bb54f1"
+  },
+  "airLine": "Luftanza",
+  "flightNumber": "L-124",
+  "location": {
+    "code": "NYC",
+    "name": "New-York International Airport"
+  },
+  "destination": {
+    "code": "BEG",
+    "name": "Begusarai Airport"
+  },
+  "date": {
+    "$date": "2024-06-21T00:00:00.000Z"
+  },
+  "price_in_inr": 1000,
+  "non_stop": true,
+  "reviews": [],
+  "__v": 0,
+  "seats_available": 20
+},
+{
+  "_id": {
+    "$oid": "6661a9414d3c926101d716c4"
+  },
+  "airLine": "Vistara",
+  "flightNumber": "V23",
+  "location": {
+    "code": "XYZ",
+    "name": "XYZ Airport"
+  },
+  "destination": {
+    "code": "ABC",
+    "name": "ABC Airport"
+  },
+  "date": {
+    "$date": "2024-06-20T00:00:00.000Z"
+  },
+  "price_in_inr": 100000,
+  "non_stop": true,
+  "seats_available": 20,
+  "reviews": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6665b06841dba4f094f2e8b4"
+  },
+  "airLine": "vistara",
+  "flightNumber": "12211",
+  "location": {
+    "code": "lko",
+    "name": "lucknow"
+  },
+  "destination": {
+    "code": "del",
+    "name": "delhi"
+  },
+  "date": {
+    "$date": "2024-06-18T00:00:00.000Z"
+  },
+  "price_in_inr": 233444,
+  "non_stop": true,
+  "seats_available": 44,
+  "reviews": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66689dc391f15336013c0734"
+  },
+  "airLine": "Luftansa",
+  "flightNumber": "LH-29",
+  "location": {
+    "code": "DBU",
+    "name": "Dabouli"
+  },
+  "destination": {
+    "code": "GUJ",
+    "name": "Gujjaini"
+  },
+  "date": {
+    "$date": "2024-06-13T00:00:00.000Z"
+  },
+  "price_in_inr": 10000000,
+  "non_stop": false,
+  "seats_available": 1,
+  "reviews": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66698398c6345f3f66b68e95"
+  },
+  "airLine": "TEST Flight",
+  "flightNumber": "TST",
+  "location": {
+    "code": "ABC",
+    "name": "ABC Airport"
+  },
+  "destination": {
+    "code": "XYZ",
+    "name": "XYZ Airport"
+  },
+  "date": {
+    "$date": "2024-06-14T00:00:00.000Z"
+  },
+  "price_in_inr": 11000,
+  "non_stop": false,
+  "seats_available": 0,
+  "reviews": [],
+  "__v": 0
+}]
