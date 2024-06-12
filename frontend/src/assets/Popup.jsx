@@ -95,6 +95,9 @@ const Popup = ({ baseFare, onClose, flight }) => {
                         await axios.post('http://localhost:3000/update-flightcount' , {
                             email : email,
                         });
+                        await axios.post('http://localhost:3000/seat-dec' , {
+                            flightnumber : flight.flightNumber,
+                        });
                         toast.success('Your Payment was successful');
                         navigate(`/thankyou?reference=${jsonString}`);
                        
@@ -187,11 +190,12 @@ const Popup = ({ baseFare, onClose, flight }) => {
                     <Text>Landing Point: {flight.destination.code}</Text>
                     <Text>Time: {new Date(flight.date).toLocaleString()}</Text>
                     <Text>Duration: 2.5 hours</Text>
+                    <Text>Seats Available: {flight.seats_available}</Text>
                     <Text>Base Fare: INR {baseFare.toFixed(2)}</Text>
                     <Text>Tax Rate: {taxRate * 100}%</Text>
                     <Text>Final Price: INR {finalPrice.toFixed(2)}</Text>
                 </Box>
-                <Button colorScheme="teal" width="100%" onClick={handlePay}>
+                <Button colorScheme="teal" width="100%" onClick={handlePay} isDisabled={flight.seats_available < 1}>
                     Pay Now
                 </Button>
             </Box>

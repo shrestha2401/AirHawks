@@ -1,12 +1,11 @@
 import React from 'react';
 import Navbar from './Navbar';
-import HomePage from './Homepage';
-
+import Dropdown from './Dropdown';
 const Dashboard = () => {
   return (
     <div>
       <Navbar/>
-      <HomePage/>
+      <Dropdown />
     </div>
   );
 };

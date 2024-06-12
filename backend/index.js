@@ -17,6 +17,7 @@ const userinforoute = require('./authentication/userinfo.js')
 const adminroute = require('./admin/admin.js')
 const createflightroute = require('./api/createflight.js')
 const admindeleteUser = require('./admin/deleteUser.js')
+const seatdecrouter = require('./api/seatdecrement.js');
 mongoose.connect(process.env.MONGODB_URI);
 const flightDBConnection = mongoose.createConnection(process.env.MONGODB_URI_ANOTHER);
 const adminDBConnection = mongoose.createConnection(process.env.ADMIN_URI);
@@ -30,6 +31,7 @@ app.use(admindeleteUser);
 app.use(userinforoute);
 app.use('/flights', flightRouter(flightDBConnection));
 app.use(ratcomrouter(flightDBConnection));
+app.use(seatdecrouter(flightDBConnection));
 app.use(fetchratingrouter(flightDBConnection));
 app.use(adminroute(adminDBConnection));
 app.use(createflightroute(flightDBConnection));
@@ -38,6 +40,7 @@ app.use(saveflightrouter);
 app.use(flightcountrouter);
 app.use(manageflightrouter);
 app.use(cancelticketrouter);
+
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
