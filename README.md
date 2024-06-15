@@ -27,3 +27,5 @@ To get started with AirHawks, follow these steps:
 8. Start backend server:
 ```nodemon index.js```
 9. Make sure to setup your own .env file
+
+![envirnment-variables-format](https://github.com/shrestha2401/AirHawks/assets/83959245/7719e708-8fe5-43f1-8992-47b4c58ddb83)
