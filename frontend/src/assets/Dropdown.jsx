@@ -69,7 +69,6 @@ const FlightSearch = () => {
           ))}
         </Select>
       </FormControl>
-
       <FormControl mb={4}>
         <FormLabel>Destination City</FormLabel>
         <Select value={destinationCity} onChange={(e) => setDestinationCity(e.target.value)} placeholder="Select Destination City">

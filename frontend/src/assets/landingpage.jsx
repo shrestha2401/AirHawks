@@ -1,14 +1,15 @@
 import React from 'react';
 import { Box, Button, Flex, Heading, Spacer } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
-
+import backgroundimage from './background.jpg';
 const LandingPage = () => {
   const navigate = useNavigate();
 
   return (
     <Box bg="gray.50" minH="100vh"
     h="100vh"
-      backgroundImage="url('https://images.unsplash.com/photo-1606768666853-403c90a981ad?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+      // backgroundImage="url('https://images.unsplash.com/photo-1606768666853-403c90a981ad?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+      backgroundImage={backgroundimage}
       backgroundSize="cover"
       backgroundPosition="center"
     
