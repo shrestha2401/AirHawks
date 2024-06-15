@@ -42,5 +42,5 @@ To get started with AirHawks, follow these steps:
 2. We have used sample password and email for admin , you can create that on your own
 
 ## Contributers: 
-- Shrestha Pandey
-- Krishna Agarwal
+- [Shrestha Pandey](https://github.com/shrestha2401)
+- [Krishna Agarwal](https://github.com/FatCatGotRekt)
